@@ -1678,18 +1678,11 @@ blockquote {
 }
 
 
-/* Background Image */
 body {
-    background-repeat: repeat;
-    background-image: url("images/slider.jpg"); /* Adjust the path to your image */
-    background-position: center; /* Center the background image */
-    background-size: cover; /* Cover the entire viewport */
-    background-attachment: fixed; /* Fixed background */
-    background-color: rgb(36, 22, 100);
-    /* opacity: 1; */
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
-    height: 100vh; /* Make the background cover the entire viewport height */
+    margin: 0; /* Remove default body margin */
+    padding: 0; /* Remove default body padding */
+    max-width: 100%; /
+    overflow-x: hidden; 
 }
 
 body > div.service-wrap {
