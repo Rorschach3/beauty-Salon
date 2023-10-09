@@ -1,25 +1,25 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 
-app = Flask("scissorsBeautySalon")
+app = Flask(__name__)
 
 
 @app.route('/')
-def home():
+def index():
     if request.method == 'GET':
         return render_template('index.html')
 
 
-@app.route('/')
-def Services():
+@app.route('/services')
+def services():
     if request.method == 'GET':
         return render_template('services.html')
 
 
-@app.route('/')
-def About():
+@app.route('/about')
+def about():
     if request.method == 'GET':
-        return render_template('index.html')
+        return render_template('about.html')
 
 
 if __name__ == '__main__':
