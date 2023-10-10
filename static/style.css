@@ -1692,3 +1692,17 @@ body {
 .social-icons footer_icon {
     text-decoration: none;
 }
+
+
+.tp-banner-container {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+
+ul.salon-hours {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
