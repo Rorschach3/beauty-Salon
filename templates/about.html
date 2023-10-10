@@ -3,6 +3,7 @@
   {% block title %} Home {% endblock %}
 
 {% block body %}
+<!-- About Start -->
 <div class="about-wrap" id="about">
     <div class="container">
         <div class="row">
@@ -21,5 +22,53 @@
             </div>
         </div>
     </div>
-</div>
+    <!-- About End -->
+    
+                <!-- Contact Start -->
+                <div class="col-lg-5">
+                    <div class="contact_info">
+                        <div class="title">
+                            <h1>Contact Information</h1>
+                        </div>
+                        <ul class="contact-list unorderList">
+                            <li>
+                                <div class="contact_box">
+                                    <div class="icon"> <img alt="" src="images/adress.png"> </div>
+                                    <p>Hair Salon<span> 123 Main St, Atlanta, GA 30201</span></p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="contact_box">
+                                    <div class="icon"> <img alt="" src="images/email.png"> </div>
+                                    <p>E-mail<span> <a href="mailto:info@example.com">info@example.com</a></span></p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="contact_box">
+                                    <div class="icon"> <img alt="" src="images/phone.png"> </div>
+                                    <p>Phone<span> <a href="tel:7701234567">(714) 123 4567</a></span></p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact end -->
+
+    <!-- Hours start -->
+    <div class="col-lg-3 col-md-10">
+        <h3>Working Hours</h3>
+        <ul class="salon-hours">
+            <li>Monday <span>Closed</span></li>
+            <li>Tuesday <span>10:00am - 8:00pm</span></li>
+            <li>Wednesday <span>10:00am - 8:00pm</span></li>
+            <li>Thursday <span>10:00am - 8:00pm</span></li>
+            <li>Friday <span>10:00am - 8:00pm</span></li>
+            <li>Saturda: <span>10:00am - 8:00pm</span></li>
+            <li>Sunday: <span>Closed</span></li>
+        </ul>
+    </div>
+    <!-- Hours End -->
 {% endblock %}

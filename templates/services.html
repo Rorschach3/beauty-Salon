@@ -1,3 +1,77 @@
 {% extends "base.html" %}
 
     <title>{% block title %}{% endblock %}</title>
+
+{% block body %}
+    <!-- Service Start -->
+    <div class="service-wrap">
+        <div class="container">
+            <div class="title">
+                <h1>Our Services</h1>
+            </div>
+            <div class="service_box">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4">
+                        <div class="serviceImg"><img alt="" src="/images/serviceimg01.png"></div>
+                        <h3><a href="services_details.html">HairCut <span>Styles</span></a></h3>
+                    </div>
+                    <div class="col-lg-4 col-md-4">
+                        <div class="serviceImg"><img alt="" src="/images/serviceimg02.jpg"></div>
+                        <h3><a href="services_details.html">Perfect <span>Hairstyles</span></a></h3>
+                    </div>
+                    <div class="col-lg-4 col-md-4">
+                        <div class="serviceImg"><img alt="" src="/images/serviceimg03.jpg"></div>
+                        <h3><a href="services_details.html">Change <span>Coloring</span></a></h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+    </div>
+    <!-- Services End -->
+
+    <!-- Contact Start -->
+    <div class="col-lg-5">
+        <div class="contact_info">
+            <div class="title">
+                <h1>Contact Information</h1>
+            </div>
+                <ul class="contact-list unorderList">
+                    <li>
+                        <div class="contact_box">
+                        <div class="icon"> <img alt="" src="images/adress.png"> </div>
+                            <p>Hair Salon<span> 123 Main St, Atlanta, GA 30201</span></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="contact_box">
+                        <div class="icon"> <img alt="" src="images/email.png"> </div>
+                            <p>E-mail<span> <a href="mailto:info@example.com">info@example.com</a></span></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="contact_box">
+                        <div class="icon"> <img alt="" src="images/phone.png"> </div>
+                            <p>Phone<span> <a href="tel:7701234567">(714) 123 4567</a></span></p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Contact end -->
+    
+        <!-- Hours start -->
+        <div class="col-lg-3 col-md-10">
+            <h3>Working Hours</h3>
+            <ul class="salon-hours">
+                <li>Monday <span>Closed</span></li>
+                <li>Tuesday <span>10:00am - 8:00pm</span></li>
+                <li>Wednesday <span>10:00am - 8:00pm</span></li>
+                <li>Thursday <span>10:00am - 8:00pm</span></li>
+                <li>Friday <span>10:00am - 8:00pm</span></li>
+                <li>Saturda: <span>10:00am - 8:00pm</span></li>
+                <li>Sunday: <span>Closed</span></li>
+            </ul>
+        </div>
+        <!-- Hours End -->
+{% endblock %}
