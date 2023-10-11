@@ -514,24 +514,10 @@ a.slidebtn i{margin-left:10px;}
 }
 
 
-
-/*---------------------------------------
-  About Css              
------------------------------------------*/
-.about-wrap{padding: 60px 0;}
-.aboutImg{margin-bottom: 15px;}.about-wrap .readmore{margin-top: 40px;}
-.about-wrap .title h1{font-size: 4rem;}
-.about_box{margin-left: 30px;}
-.subText{font-size: 18px; font-weight: 600; color: #000; font-family: 'Montserrat', sans-serif; margin-bottom: 15px;}
-
-
-
-
-
 /*---------------------------------------
    Services section              
 -----------------------------------------*/
-.service-wrap{padding: 60px 0 200px 0; background: url(../images/service-bg.jpg) no-repeat top; text-align: center;}
+.service-wrap{padding: 60px 0 200px 0; background: url("C:\Users\danie\Kali-linux\Websites\Beauty-Salon\images\service-bg.jpg") no-repeat top; text-align: center;}
 .service-wrap h1{color: #fff;}
 .service-wrap .title:after{left: 50%; margin-left: -26px; background: #fff;}
 .service_box{background: #fff; padding: 40px;}
@@ -560,7 +546,7 @@ a.slidebtn i{margin-left:10px;}
 /*---------------------------------------
    Appointment section              
 -----------------------------------------*/
-.appointment-wrap{padding: 40px 0; background: url(../images/appointment-bg.jpg) no-repeat top; background-size: cover;}
+.appointment-wrap{padding: 40px 0; background: url("C:\Users\danie\Kali-linux\Websites\Beauty-Salon\images\appointment-bg.jpg") no-repeat top; background-size: cover;}
 .appointment-wrap .readmore{margin: 0;}
 .appointment-wrap .readmore a{background: #56225e;}
 .appointment-wrap .readmore a:hover{background: #000;}
@@ -682,24 +668,6 @@ button:focus{outline: none;}
 /*********************************************
         Footer css
 *********************************************/
-.footer-wrap{background: url(../images/footer-bg.jpg) no-repeat top; background-size: cover; padding: 50px 0 20px 0;}
-.footer-wrap p{font-size: 14px; color:#bcc5d0; margin-top: 15px;}
-
-.footer-wrap h3{font-size: 18px; margin-bottom: 20px; display: inline-block; font-weight: bold; font-family: 'Open Sans', sans-serif; color: #fff; margin-bottom: 25px;}
-.footer-links{list-style:none; margin-bottom: 0;}
-.footer-links li{margin-bottom: 10px;}
-.footer-links li a{text-decoration:none; color:#bcc5d0; font-size:14px;}
-.footer-links li:before{content: "\f0da"; font-weight: 600; font-family: 'Font Awesome 5 Free'; padding-right:10px; color:#bcc5d0; font-size: 14px;}
-.footer-links li a:hover{color: #e47b9b;}
-.insta_pics{}
-.insta_pics li{display: inline-block; padding-right: 5px; margin-bottom: 9px;}
-.hourswrp{}
-.hourswrp li{font-size: 14px; color: #bcc5d0;  border-bottom: 1px solid #484848; padding:5px 0;}
-.hourswrp li span{float: right;}
-.hourswrp li:first-child{padding-top: 0;}
-.hourswrp li:last-child{border: none;}
-.footer_info{}
-
 .footer-adress{list-style:none;}
 .footer-adress li{margin:0;  padding-bottom: 15px; display: flex;}
 .footer-adress li > i{vertical-align:top; font-size:16px; color:#bcc5d0; width:30px; padding-top: 3px;}
@@ -1128,7 +1096,7 @@ blockquote {
 /*************************************
         Static Banner css
 *************************************/
-.staticbanner_wrap{background: url(../images/slider2.jpg) no-repeat top; background-size: cover; padding: 90px 0 60px 0; margin-top: -34px;}
+.staticbanner_wrap{background: url("slider.jpg") no-repeat top; background-size: cover; padding: 90px 0 60px 0; margin-top: -34px;}
 .banner_wrap{margin-top: 18px;}
 .banner_wrap .title{margin-bottom: 40px;}
 .banner_wrap .title h1{color: #fff; font-size: 50px; text-transform: uppercase;}
@@ -1677,9 +1645,10 @@ blockquote {
 .copyright-wrap .footer_links li:last-child{border-bottom: none}
 }
 
+/*****: Personal :*****/
 
 body {
-    background-image: url("/images/slider.jpg");
+    background-image: url("/slider.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     margin: 0; /* Remove default body margin */

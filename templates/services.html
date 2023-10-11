@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-    <title>{% block title %}{% endblock %}</title>
+    {% block title %} Services {% endblock %}
 
 {% block body %}
     <!-- Service Start -->
@@ -12,15 +12,15 @@
             <div class="service_box">
                 <div class="row">
                     <div class="col-lg-4 col-md-4">
-                        <div class="serviceImg"><img alt="" src="/images/serviceimg01.png"></div>
+                        <div class="serviceImg"><img alt="" src="./images/serviceimg01.png"></div>
                         <h3><a href="services_details.html">HairCut <span>Styles</span></a></h3>
                     </div>
                     <div class="col-lg-4 col-md-4">
-                        <div class="serviceImg"><img alt="" src="/images/serviceimg02.jpg"></div>
+                        <div class="serviceImg"><img alt="" src="./images/serviceimg02.jpg"></div>
                         <h3><a href="services_details.html">Perfect <span>Hairstyles</span></a></h3>
                     </div>
                     <div class="col-lg-4 col-md-4">
-                        <div class="serviceImg"><img alt="" src="/images/serviceimg03.jpg"></div>
+                        <div class="serviceImg"><img alt="" src="./images/serviceimg03.jpg"></div>
                         <h3><a href="services_details.html">Change <span>Coloring</span></a></h3>
                     </div>
                 </div>
@@ -61,7 +61,7 @@
         <!-- Contact end -->
     
         <!-- Hours start -->
-        <div class="col-lg-3 col-md-10">
+        <div class="col-lg-3 col-md-8">
             <h3>Working Hours</h3>
             <ul class="salon-hours">
                 <li>Monday <span>Closed</span></li>
