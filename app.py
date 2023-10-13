@@ -1,10 +1,9 @@
-from flask import Flask, render_template, request
-from flask_ngrok import run_with_ngrok
+from flask import Flask, render_template, request, send_from_directory
+import os
 
 
 app = Flask(__name__)
 
-run_with_ngrok(app)  # Start ngrok when app is run
 
 @app.route('/')
 def index():
@@ -28,6 +27,13 @@ def about():
 def appointments():
     if request.method == 'GET':
         return render_template('appointments.html')
+
+
+@app.route('/images/facebook.png')
+def get_image():
+    image_directory = os.path.join(app.root_path, 'images')
+    filename = 'facebook.png'
+    return send_from_directory(image_directory, filename)
 
 
 if __name__ == '__main__':
