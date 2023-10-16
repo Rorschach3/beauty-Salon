@@ -29,12 +29,5 @@ def appointments():
         return render_template('appointments.html')
 
 
-@app.route('/images/facebook.png')
-def get_image():
-    image_directory = os.path.join(app.root_path, 'images')
-    filename = 'facebook.png'
-    return send_from_directory(image_directory, filename)
-
-
 if __name__ == '__main__':
     app.run()

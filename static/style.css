@@ -669,7 +669,6 @@ button.btn.btn-primary.btn-outline-dark {
 div.row {
     text-align: center;
     margin: 1em 4em 4em 1em;
-    box-shadow: 0 0 10px rgba(100, 100, 100, 0.15);
 }
 
 
@@ -697,29 +696,20 @@ div:nth-child(1) > ul {
     font-size: 1rem;
     font-weight: 600;
     color: rgba(255, 255, 255, 0.8);
-    text-decoration: none;
+    list-style: none;
 }
 
 div.col-lg-12.col-md-4 > h3 {
     font-size: 3rem;
 }
 
-div.col-lg-3.col-md-4.offset-1 > div > ul {
+/* Social media links */
+body > div.col-lg-2.col-md-3 > div > div > ul {
     display:flex;
     justify-content: center;
     align-items: center;
-}
-
-/* div.footer-wrap > div > div > div {
-    display:flex;
-    justify-content: center;
-    align-items: center;
+    position: relative;
     flex-direction: row;
-} */
-
-
-div.col-lg-3.col-md-10 {
-    display: flex;
 }
 
 div:nth-child(2) > a > img {
@@ -735,8 +725,24 @@ div:nth-child(2) > a > img {
     opacity: .85;
 }
 
-.contact-and-footer {
+body > div.contact-and-footer > div > div.col-lg-8 > div > div > div > ul > li{
     display: flex;
-    flex-direction: row; /* Arrange components side by side */
-    gap: 3;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+/* float the contacts and quick links */
+.content-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+/* remove bullet points for the lists */
+.contact-list {
+    list-style: none;
+    padding: 0;
 }
