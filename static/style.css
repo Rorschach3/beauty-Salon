@@ -664,31 +664,32 @@ button.btn.btn-primary.btn-outline-dark {
     position: relative;
 }
 
-
-
 div.row {
     text-align: center;
-    margin: 1em 4em 4em 1em;
+    margin: 6em 4em 2.5em 4em;
 }
 
+/* Hours of Operation */
+#hours {
+    font-size: 2rem;
+    margin: 2.5em 0 3em 0
+}
 
+/* Hours */
 div.salon-hours {
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    margin: 1em 4em 4em 1em;
+    margin: 0 0 1em 0;
     padding: 10px;
+    width: 100%;
+    flex-shrink: 1;
 }
 
 /* Hours of Operation Table */
 table, th, td {
     border: 0;
-    font-size: 1rem;
-}
-
-/* Hours of Operation */
-div.title > h1 {
     font-size: 1rem;
 }
 
@@ -700,7 +701,7 @@ div:nth-child(1) > ul {
 }
 
 div.col-lg-12.col-md-4 > h3 {
-    font-size: 3rem;
+    font-size: 3em 0 3em 0;
 }
 
 /* Social media links */
@@ -722,7 +723,7 @@ div:nth-child(2) > a > img {
     background-image: url("https://www.medialinkers.net/demo/envato/saloon/publish/images/service-bg.jpg");
     background-color: initial;
     height: 75%;
-    opacity: .85;
+    opacity: 1;
 }
 
 body > div.contact-and-footer > div > div.col-lg-8 > div > div > div > ul > li{
@@ -745,4 +746,49 @@ body > div.contact-and-footer > div > div.col-lg-8 > div > div > div > ul > li{
 .contact-list {
     list-style: none;
     padding: 0;
+}
+
+/* Change h1 size */
+h1 {
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+/* Change h1 to pink */
+.title h1 {
+    color: rgb(209, 152, 218);
+    font-size: 38px;
+}
+
+
+/* Our Services  */
+div.service-wrap {
+    margin: 3rem 0;
+}
+
+div.title {
+    margin: 1em 1em -5em 1em;
+}
+/* Contact Information heading */
+div > div.col-lg-5 > div > div > h1 {
+    gap: 4em;
+    margin: 0 1em 3em 1em;
+    padding: 0 0 .5em 0;
+}
+
+
+div > div.col-lg-6 > div > div.title > h3 {
+    margin: 0 4em 4em 2em;
+    padding: 1em;
+    font-size: 1.5rem;
+}
+
+#appointment {
+    margin: .5em 0 5em 0;
+}
+
+
+#services {
+    margin-bottom: 40%;
+    padding-bottom: 15em;
 }
