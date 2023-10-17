@@ -551,7 +551,7 @@
 .slider_info .sliderText{font-size: 16px; line-height: 20px;}
 .copyright-wrap .footer_links li{border-bottom: 1px solid #d0d0d0;}
 .copyright-wrap .footer_links li:first-child{border-top: none}
-.copyright-wrap .footer_links li:last-child{border-bottom: none}
+.copyright-wrap .footer_links li:laseet-child{border-bottom: none}
 }
 
 /* *********************************************************** */
@@ -593,9 +593,6 @@
 
 
 /* *********************************************************** */
-
-
-
 body { 
     background-repeat: no-repeat;
     background-image: url("https://i.ibb.co/cJyj9fh/slider.jpg");
@@ -618,7 +615,6 @@ body {
     align-items: center;
     position: relative;
 } */
-
 
 /* Welcome To */
 h1.large-title {
@@ -689,8 +685,11 @@ div.salon-hours {
 
 /* Hours of Operation Table */
 table, th, td {
-    border: 0;
+    border: 2px solid rgba(0, 0, 0, .5);
+    box-shadow: 2 8 3px rgba(0, 0, 0, .25);
     font-size: 1rem;
+    gap: 1em;
+    padding: 1em;
 }
 
 div:nth-child(1) > ul {
@@ -704,14 +703,6 @@ div.col-lg-12.col-md-4 > h3 {
     font-size: 3em 0 3em 0;
 }
 
-/* Social media links */
-body > div.col-lg-2.col-md-3 > div > div > ul {
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    flex-direction: row;
-}
 
 div:nth-child(2) > a > img {
     display: flex;
@@ -760,7 +751,6 @@ h1 {
     font-size: 38px;
 }
 
-
 /* Our Services  */
 div.service-wrap {
     margin: 3rem 0;
@@ -769,13 +759,13 @@ div.service-wrap {
 div.title {
     margin: 1em 1em -5em 1em;
 }
+
 /* Contact Information heading */
 div > div.col-lg-5 > div > div > h1 {
     gap: 4em;
     margin: 0 1em 3em 1em;
     padding: 0 0 .5em 0;
 }
-
 
 div > div.col-lg-6 > div > div.title > h3 {
     margin: 0 4em 4em 2em;
@@ -787,8 +777,26 @@ div > div.col-lg-6 > div > div.title > h3 {
     margin: .5em 0 5em 0;
 }
 
-
 #services {
     margin-bottom: 40%;
     padding-bottom: 15em;
+}
+
+/* Social media links */
+body > div.col-lg-2.col-md-3 > div > div > ul {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-direction: row;
+}
+
+/* Social Media Links */
+.social {
+    gap: .5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    margin-left: 1em;
 }
