@@ -18,9 +18,9 @@
 .banner_col .readmore a{font-size: 16px; padding: 18px 30px;}
 .banner_col .readmore a:hover{background: #fff; color: #000;}
 .bannerform .input-group{margin-top: 8px;}
-.bannerform .input-group .form-control{border-radius: 0; height: 38px; border: none; font-size: 14px;}
+.bannerform .input-group .form-control{border-radius: 0; height: 28px; border: none; font-size: 14px;}
 .bannerform textarea.form-control{height: 100px !important;}
-.contact_form h1{text-transform: none !important; font-size: 30px !important;}
+.contact_form h1{text-transform: none !important; font-size: 2.1rem !important;}
 .bannerform .sub{box-shadow: 0 4px 5px rgba(0, 0, 0, 0.15);
     color: #fff;
     font-size: 15px;
@@ -597,6 +597,11 @@ font-family: 'Qwitcher Grypen', cursive; */
 
 /* *********************************************************** */
 /* Background  */
+
+html {
+    font-size: 18px;
+}
+
 body { 
     background-repeat: no-repeat;
     background-image: url("https://i.ibb.co/5T1P3ph/slider.jpg");
@@ -613,15 +618,19 @@ body {
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
 }
+a {
+    color: rgba(215, 220, 210, 1);
+}
 
-/* body > div.service-wrap {
-    width: 100%;
-    padding: 80px 0;
-    margin: 3em 0;
-    background-size: cover;
-    align-items: center;
-    position: relative;
-} */
+a:hover {
+    color: rgba(100, 75, 250, 1);
+}
+
+/* center navbar */
+div#navbarColor01.collapse.navbar-collapse {
+    margin: 0 3em;
+    padding 0 3em;
+}
 
 /* Welcome To */
 h1.large-title {
@@ -661,10 +670,26 @@ body > div.tp-banner-container {
 }
 
 /*Contact Us Button */
-button.btn.btn-primary.btn-outline-dark {
+button.btn.btn-primary.active {
     width: 8em;
-    margin: 0 0 0 20em;
     position: relative;
+}
+
+
+/* appointment Button */
+#appointmentButton {
+    margin-left: 30em;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    width: 10em;
+    position: block;
+}
+/* appointment Button */
+#appointmentButton > a {
+    text-decoration: none;
+    color: rgb(215, 220, 210);
+    font-size: 1.2em;
+    width: auto;
 }
 
 div.row {
@@ -676,6 +701,7 @@ div.row {
 #hours {
     font-size: 2rem;
     margin: 2.5em 0 3em 0
+    border: 1px solid rgba(255, 255, 255, 0.8);
 }
 
 /* Hours */
@@ -685,7 +711,7 @@ div.salon-hours {
     justify-content: center;
     text-align: center;
     margin: 0 0 1em 0;
-    padding: 1.5em;
+    padding: 1em;
     width: 100%;
     flex-shrink: 1;
 }
@@ -705,7 +731,7 @@ div:nth-child(1) > ul {
 }
 
 div.col-lg-12.col-md-4 > h3 {
-    font-size: 3em 0 3em 0;
+    font-size: 3rem;
 }
 
 
@@ -753,7 +779,7 @@ h1 {
 /* Change h1 to pink */
 .title h1 {
     color: rgb(209, 152, 218);
-    font-size: 38px;
+    font-size: 2.5rem;
 }
 
 /* Our Services  */
@@ -806,11 +832,29 @@ body > div.col-lg-2.col-md-3 > div > div > ul {
     margin-left: 1em;
 }
 
+/* Appointment header */
 #appointment {
-    font-size: 2.5em;
+    font-size: 3rem;
 }
 
-/* Appointment contact form */
+/* Appointment form */
 #contact > div > div > div > div {
     /* border: 3px solid black; */
-    box-shadow: 2px 2px 10px 0 rgba(255, 255, 255, 0.5);
+    box-shadow: 2px 2px 8px 0 rgba(255, 255, 255, 0.3);
+}
+
+/* Appointment form Outline */
+div.contact_form {
+    padding: .5em;
+}
+
+#services > div > div.service_box > div > div {
+    background-color: rgba(0,0,0,.6);
+}
+
+/* blockquote */
+blockquote.blockquote, .blockquote-footer {
+    text-align: center;
+    margin: 0 3em;
+    padding: 0 3em;
+}
