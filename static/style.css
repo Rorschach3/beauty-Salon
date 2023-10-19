@@ -430,7 +430,7 @@
 .navbar-light .navbar-nav .nav-link:hover{background: #e784a2; color: #fff;}
 .navbar{margin: 0;}
 .header-wrap .conInfo span{text-align: left;}
-.about_box{margin-left: 0; padding: 0 30px;}
+/* .about_box{margin-left: 0; padding: 0 30px;} */
 .navbar-nav>li>a+i{
     display: block;
     position: absolute;
@@ -504,7 +504,7 @@
 
 @media screen and (max-width: 480px){
     .videoslider h1{font-size: 24px;}
-    .banner_wrap .title h1{font-size: 4rem;}
+    .banner .title h1{font-size: 4rem;}
     .videoslider p{font-size: 16px;}
     .videoWrp, .hero-wrapper{height: 200px;}
 .client_box{display: block;}
@@ -588,23 +588,30 @@
 
 
 
-
+/* font-family: 'Dancing Script', cursive;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Playfair Display', serif;
+font-family: 'Qwitcher Grypen', cursive; */
 
 
 
 /* *********************************************************** */
+/* Background  */
 body { 
     background-repeat: no-repeat;
-    background-image: url("https://i.ibb.co/cJyj9fh/slider.jpg");
+    background-image: url("https://i.ibb.co/5T1P3ph/slider.jpg");
     opacity: 1;
     background-position: center center;
     background-size: cover;
-    margin: 0; /* Remove default body margin */
-    padding: 0; /* Remove default body padding */
+    margin: 0;
+    padding: 0;
     max-width: 100%;
     height: 100vh;
     overflow-x: hidden;
-    background-color: rgba(240, 195, 190, 1);
+    background-color: rgba(49, 32, 49, 1);
+    color: rgb(255, 255, 255);
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
 }
 
 /* body > div.service-wrap {
@@ -678,18 +685,16 @@ div.salon-hours {
     justify-content: center;
     text-align: center;
     margin: 0 0 1em 0;
-    padding: 10px;
+    padding: 1.5em;
     width: 100%;
     flex-shrink: 1;
 }
 
 /* Hours of Operation Table */
 table, th, td {
-    border: 2px solid rgba(0, 0, 0, .5);
-    box-shadow: 2 8 3px rgba(0, 0, 0, .25);
     font-size: 1rem;
     gap: 1em;
-    padding: 1em;
+    padding: 1.5em;
 }
 
 div:nth-child(1) > ul {
@@ -800,3 +805,12 @@ body > div.col-lg-2.col-md-3 > div > div > ul {
     flex-direction: row;
     margin-left: 1em;
 }
+
+#appointment {
+    font-size: 2.5em;
+}
+
+/* Appointment contact form */
+#contact > div > div > div > div {
+    /* border: 3px solid black; */
+    box-shadow: 2px 2px 10px 0 rgba(255, 255, 255, 0.5);
