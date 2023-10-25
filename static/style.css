@@ -1,5 +1,21 @@
+/**************************************
+Font Files
+***************************************/
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-Regular.eot');
+    src: url('C:/webfonts/Railway.otf'); format('otf');
+    src: url('../webfonts/Railway.otf') format('otf');
+    src: url('../webfonts/Alternate.otf') format('otf');
+    src: url('../webfonts/fa-solid-900.woff') format('woff');
+        
+    font-family: 'Dancing Script', cursive;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Playfair Display', serif;
+    font-family: 'Qwitcher Grypen', cursive;
 
 
+}
 
 
 /*************************************
@@ -588,10 +604,10 @@
 
 
 
-/* font-family: 'Dancing Script', cursive;
+font-family: 'Dancing Script', cursive;
 font-family: 'Montserrat', sans-serif;
 font-family: 'Playfair Display', serif;
-font-family: 'Qwitcher Grypen', cursive; */
+font-family: 'Qwitcher Grypen', cursive;
 
 
 
@@ -604,7 +620,7 @@ html {
 
 body { 
     background-repeat: no-repeat;
-    background-image: url("https://i.ibb.co/5T1P3ph/slider.jpg");
+    /* background-image: url("https://i.ibb.co/5T1P3ph/slider.jpg"); */
     opacity: 1;
     background-position: center center;
     background-size: cover;
@@ -613,11 +629,26 @@ body {
     max-width: 100%;
     height: 100vh;
     overflow-x: hidden;
-    background-color: rgba(49, 32, 49, 1);
+    background-color: rgba(49, 32, 49, .3);
     color: rgb(255, 255, 255);
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
+    z-index: 1;
 }
+
+.carousel-inner {
+position: absolute;
+background-size: cover;
+margin: 0;
+padding: 0;
+max-width: 100%;
+height: 50vh;
+overflow-x: hidden;
+opacity: .75;
+z-index: -1;
+}
+
+
 a {
     color: rgba(215, 220, 210, 1);
 }
@@ -692,11 +723,6 @@ button.btn.btn-primary.active {
     width: auto;
 }
 
-div.row {
-    text-align: center;
-    margin: 6em 4em 2.5em 4em;
-}
-
 /* Hours of Operation */
 #hours {
     font-size: 2rem;
@@ -730,11 +756,6 @@ div:nth-child(1) > ul {
     list-style: none;
 }
 
-div.col-lg-12.col-md-4 > h3 {
-    font-size: 3rem;
-}
-
-
 div:nth-child(2) > a > img {
     display: flex;
     align-items: flex-start;
@@ -742,17 +763,9 @@ div:nth-child(2) > a > img {
 }
 /* Services top Banner */
 .service-wrap {
-    background-image: url("https://www.medialinkers.net/demo/envato/saloon/publish/images/service-bg.jpg");
-    background-color: initial;
+    /* background-image: url("https://www.medialinkers.net/demo/envato/saloon/publish/images/service-bg.jpg"); */
     height: 75%;
     opacity: 1;
-}
-
-body > div.contact-and-footer > div > div.col-lg-8 > div > div > div > ul > li{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
 }
 
 /* float the contacts and quick links */
@@ -772,19 +785,15 @@ body > div.contact-and-footer > div > div.col-lg-8 > div > div > div > ul > li{
 
 /* Change h1 size */
 h1 {
-    font-size: 3rem;
+    font-size: 1.5rem;
     font-weight: 600;
+    color: rgb(209, 152, 218);
 }
 
 /* Change h1 to pink */
 .title h1 {
     color: rgb(209, 152, 218);
-    font-size: 2.5rem;
-}
-
-/* Our Services  */
-div.service-wrap {
-    margin: 3rem 0;
+    font-size: 1.5rem;
 }
 
 div.title {
@@ -798,29 +807,18 @@ div > div.col-lg-5 > div > div > h1 {
     padding: 0 0 .5em 0;
 }
 
-div > div.col-lg-6 > div > div.title > h3 {
-    margin: 0 4em 4em 2em;
-    padding: 1em;
-    font-size: 1.5rem;
-}
 
 #appointment {
     margin: .5em 0 5em 0;
 }
 
 #services {
-    margin-bottom: 40%;
-    padding-bottom: 15em;
+    margin-bottom: 15%;
+    padding-bottom: 10em;
 }
 
 /* Social media links */
-body > div.col-lg-2.col-md-3 > div > div > ul {
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    flex-direction: row;
-}
+
 
 /* Social Media Links */
 .social {
@@ -835,6 +833,7 @@ body > div.col-lg-2.col-md-3 > div > div > ul {
 /* Appointment header */
 #appointment {
     font-size: 3rem;
+    font-family: 'Font Awesome 5 Brands Regular', sans-serif;
 }
 
 /* Appointment form */
@@ -848,8 +847,9 @@ div.contact_form {
     padding: .5em;
 }
 
-#services > div > div.service_box > div > div {
-    background-color: rgba(0,0,0,.6);
+#services > div > div.service_box > div > div, #services {
+    position: inline;
+    margin-top: 5vh;
 }
 
 /* blockquote */
