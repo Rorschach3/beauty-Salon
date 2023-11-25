@@ -1,0 +1,51 @@
+/* Appointment header */
+#appointment {
+    font-size: 3rem;
+    font-family: 'fa-brands-400', sans-serif;
+    margin: .5em 0 .75em 0;
+}
+
+div.#contact.content-wrap {
+    position: relative; /* or absolute */
+    top: 10em;
+}
+
+/* Appointment form */
+#contact > div > div > div > div {
+    box-shadow: 2px 2px 8px 0 rgba(255, 255, 255, 0.3);
+}
+
+/* Appointment form Outline */
+div.contact_form {
+    padding: .5em;
+    margin: 3em 3em 0 3em;
+    appearance: none;
+    background: rgba(0,0,0,0.01);
+    border: none;
+    border-radius: 15;
+    outline: 0;
+    text-decoration: none;
+    width: 100%;
+}
+
+/* appointment Button */
+#appointmentButton {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    width: 10em;
+    position: block;
+}
+/* appointment Button */
+#appointmentButton > a {
+    text-decoration: none;
+    color: rgb(215, 220, 210);
+    font-size: 1.2em;
+    font-weight: bold;
+    width: auto;
+}
+
+
+/* Appointment button positioning */
+div.form-group {
+    text-align: center;
+}
