@@ -9,13 +9,13 @@ class AppointmentForm(FlaskForm):
     email = StringField('Email', validators=[DataRequired()])
     phone = StringField('Phone', validators=[DataRequired()])
     appointment_type = SelectField('Appointment Type',
-                                   choices=[('1', 'Hair Style'),
-                                            ('2', 'Hair Cut'),
-                                            ('3', 'Color Change')],
+                                   choices=[(1, 'Hair Style'),
+                                            (2, 'Hair Cut'),
+                                            (3, 'Color Change')],
                                    validators=[DataRequired()])
     stylist = SelectField('Stylist',
-                          choices=[('1', 'Ana'), ('2', 'Marie'),
-                                   ('3', 'Suzie')],
+                          choices=[(1, 'Ana'), (2, 'Marie'),
+                                   (3, 'Suzie')],
                           validators=[DataRequired()])
     date = DateField('Date', validators=[DataRequired()])
     time = SelectField('Time',

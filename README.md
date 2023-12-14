@@ -24,8 +24,6 @@ Go to the project directory
 
 ```
 
-Install dependencies
-
 ```bash {"id":"01HGF2PWJAAY0Z5PCWWGQ7Z62F"}
   pip install -r requirements.txt
 
@@ -34,7 +32,7 @@ Install dependencies
 Start the server
 
 ```bash {"id":"01HGF2PWJAAY0Z5PCWWJ50TH2H"}
-  flask run
+  python main.py
 
 ```
 
@@ -50,7 +48,7 @@ Start the server
 
 > About Page
 
-- About page has some positive statements about the beauty salon, cotact information, hours of operation and quick links to social media.
+- About page has some positive statements about the beauty salon, contact information, hours of operation and quick links to social media.
 
 > Appointments Page
 

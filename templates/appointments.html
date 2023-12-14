@@ -2,7 +2,7 @@
 {% block title %} Appointments {% endblock %}
 {% block body %}
 <br>
-<link rel="stylesheet" type="text/css" href="/static/appointments.css">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='appointments.css') }}">
 <!-- Appointment Start -->
 <div class="content-wrap" id="contact">
     <div class="container">
@@ -15,7 +15,8 @@
                     <p>
                         Book an appointment with one of our many highly experienced hair and beauty professional stylists.
                     </p>
-                    <form class="form" method="POST" action="{{ url_for('appointments') }}">
+                    <form class="form" method="post" action="{{ url_for('render_appointment_form') }}">
+                        {{ form.csrf_token }}
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="mb-3">
@@ -102,5 +103,5 @@
         </div>
     </div>
 </div>
- Appointments End -->
+ <!--Appointments End -->
 {% endblock %}

@@ -1,10 +1,13 @@
-from flask import Flask, redirect, render_template, url_for, request
+from flask import Flask, redirect, render_template, url_for, request, flash
 from flask_wtf import FlaskForm
 from flask_sqlalchemy import SQLAlchemy
+from datetime import datetime
+
+from appointments import AppointmentForm
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret_key'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///appointments.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///instance/appointments.db'
 db = SQLAlchemy(app)
 
 
@@ -30,31 +33,42 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/book_appointment', methods=['GET', 'POST'])
+@app.route('/appointments', methods=['GET', 'POST'])
 def render_appointment_form():
-    form = Appointment()
+    form = AppointmentForm()
 
     if request.method == 'POST' and form.validate_on_submit():
-        appointment = Appointment(first_name=form.first_name.data,
-                                  last_name=form.last_name.data,
-                                  email=form.email.data,
-                                  phone=form.phone.data,
-                                  appointment_type=form.appointment_type.data,
-                                  stylist=form.stylist.data,
-                                  date=form.date.data,
-                                  time=form.time.data)
+        date_str = form.date.data
+        formatted_date = datetime.strptime(date_str, '%Y-%m-%d').date()
+        
+        appointment = Appointment(
+            first_name=form.first_name.data,
+            last_name=form.last_name.data,
+            email=form.email.data,
+            phone=form.phone.data,
+            appointment_type=form.appointment_type.data,
+            stylist=form.stylist.data,
+            date=formatted_date,
+            time=form.time.data)
 
         db.session.add(appointment)
         db.session.commit()
 
-        return redirect(url_for('success'))
+        flash('Appointment booked successfully!', 'success')
+        return redirect(url_for('success', appointment_id=appointment.id))
+    else:
+        flash('Appointment not booked. Please try again.', 'danger')
 
     return render_template('appointments.html', form=form)
 
 
-@app.route('/success')
-def success():
-    return 'Appointment booked successfully!'
+@app.route('/success/<int:appointment_id>')
+def success(appointment_id):
+    appointment = Appointment.query.get(appointment_id)
+    if not appointment:
+        return redirect(url_for('render_appointment_form'))
+    
+    return render_template('success.html', appointment=appointment)
 
 
 @app.route('/services')
@@ -65,11 +79,6 @@ def services():
 @app.route('/about')
 def about():
     return render_template('about.html')
-
-
-@app.route('/appointments')
-def appointments():
-    return render_template('appointments.html')
 
 
 if __name__ == '__main__':
