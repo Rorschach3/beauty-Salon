@@ -25,16 +25,17 @@ div.contact_form {
     border-radius: 15;
     outline: 0;
     text-decoration: none;
-    width: 100%;
+    width: 50%;
 }
 
 /* appointment Button */
 #appointmentButton {
     text-decoration: none;
     color: rgb(255, 255, 255);
-    width: 10em;
-    position: block;
+    width: 6em;
 }
+
+
 /* appointment Button */
 #appointmentButton > a {
     text-decoration: none;
