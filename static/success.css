@@ -1,0 +1,23 @@
+h1, p, td, th, table {
+    text-align: center;
+}
+
+
+table.table.table-dark.table-striped {
+    display: flex;
+    flex-direction: row-reverse;
+    text-align: center;
+    align-items: center;
+    justify-content: space-evenly;
+    width: auto;
+}
+
+.table {
+    width: auto;
+    margin: auto;
+}
+
+tbody {
+    border-style: none;
+
+}

@@ -2,18 +2,66 @@
 {% block title %} Successful Appointment {% endblock %}
 {% block body %}
 
+<link rel="stylesheet" href="/static/success.css" type="text/css">
 <!-- success -->
-    <h1>Appointment Confirmation</h1>
-    <p>Thank you for booking an appointment!</p>
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+        <div class="alert alert-{{ category }}">
+            {{ message }}
+        </div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+<h1>Appointment Confirmation</h1>
+<p>Thank you for booking an appointment!</p>
+<table class="table table-dark table-striped">
+        <thead>
+            <tr>
 
-    <p><strong>First Name:</strong> {{ appointment.first_name }}</p>
-    <p><strong>Last Name:</strong> {{ appointment.last_name }}</p>
-    <p><strong>Email:</strong> {{ appointment.email }}</p>
-    <p><strong>Phone:</strong> {{ appointment.phone }}</p>
-    <p><strong>Appointment Type:</strong> {{ appointment.appointment_type }}</p>
-    <p><strong>Stylist:</strong> {{ appointment.stylist }}</p>
-    <p>Date: {{ appointment.date.strftime('%Y-%m-%d') }}</p>
-    <p><strong>Time:</strong> {{ appointment.time }}</p>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>First Name:</strong></td>
+                <td>{{ appointment.first_name }}</td>
+            </tr>
+            <tr>
+                <td><strong>Last Name:</strong></td>
+                <td>{{ appointment.last_name }}</td>
+            </tr>
+            <tr>
+                <td><strong>Email:</strong></td>
+                <td> {{ appointment.email }}</td>
+            </tr>
+            <tr>
+                <td><strong>Phone:</strong></td>
+                <td>{{ appointment.phone }}</td>
+            </tr>
+            <tr>
+                <td><strong>Appointment Type:</strong></td>
+                <td>{{ appointment.appointment_type }}</td>
+            </tr>
+            <tr>
+                <td><strong>Stylist:</strong></td>
+                <td>{{ appointment.stylist }}</td>
+            </tr>
+            <tr>
+                <td><strong>Date: </strong></td>
+                <td>{{ appointment.date.strftime('%Y-%m-%d') }}</td>
+            </tr>
+            <tr>
+                <td><strong>Time:</strong></td>
+                <td>{{ appointment.time }}</td>
+            </tr>    
+        </tbody>
+    </table>
+
+
+
+    <div class="text-center">
+        <button id="goHome" type="button" class="btn btn-primary mx-auto" onclick="window.location.href='/'">Home</button>
+    </div>
 <!-- sucess end -->
 
 {% endblock %}
