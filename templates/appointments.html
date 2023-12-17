@@ -93,15 +93,6 @@
                                     <div class="form-group">
                                         <div class="button">
                                             <button id="book_appointment" type="submit" class="btn btn-primary active">Book Appointment!</button>
-                                            {% with messages = get_flashed_messages(with_categories=true) %}
-                                                {% if messages %}
-                                                    {% for category, message in messages %}
-                                                    <div class="alert alert-{{ category }}">
-                                                        {{ message }}
-                                                    </div>
-                                                    {% endfor %}
-                                                {% endif %}
-                                            {% endwith %}
                                         </div>
                                     </div>
                                 </div>

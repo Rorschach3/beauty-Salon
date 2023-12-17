@@ -114,8 +114,8 @@ body {
     max-width: 100%;
     height: 100vh;
     overflow-x: hidden;
-    background-color: rgba(10, 10, 10, .9);
-    color: rgb(255, 255, 255);
+    background-color: rgba(200, 150, 150, .1);
+    color: rgb(255, 200, 230);
     font-family: fa-brands-400, sans-serif;
     font-weight: 600;
     z-index: 1;
@@ -164,7 +164,7 @@ h1.large-title {
 
 /* Beauty Salon */
 h1.large-title:nth-child(2){
-    padding: 1em 0em 1em 3em;
+    padding: .5em 0em 0em 6em;
     font-size: 4rem;
 }
 
@@ -194,6 +194,15 @@ button.btn.btn-primary.active {
 	margin: auto;
 	color: rgb(255, 255, 255);
 }
+
+/* Book Appointment Button */
+button.btn.btn-primary.btn-outline-primary{
+    color: white;
+}
+
+button.btn.btn-primary.btn-outline-primary:hover {
+    color: pink;
+
 
 /* Quick Links */
 div.footer-wrap {
