@@ -1,37 +1,62 @@
 from flask import Flask, redirect, render_template, url_for, request, flash
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
+from flask_wtf import FlaskForm
+from wtforms import DateField, SelectField, StringField
+from wtforms.validators import DataRequired
 
-from appointments import AppointmentForm
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'secret_key'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
-
+app.config["SECRET_KEY"] = 'secret_key' 
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///data.db"
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 db = SQLAlchemy(app)
 
 
 class Appointment(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    first_name = db.Column(db.String(50), nullable=False)
-    last_name = db.Column(db.String(50), nullable=False)
-    email = db.Column(db.String(120), nullable=False)
-    phone = db.Column(db.String(20), nullable=False)
-    appointment_type = db.Column(db.String(20), nullable=False)
-    stylist = db.Column(db.String(20), nullable=False)
-    date = db.Column(db.Date, nullable=False)
-    time = db.Column(db.String(10), nullable=False)
+    first_name = db.Column(db.String(50))
+    last_name = db.Column(db.String(50))
+    email = db.Column(db.String(120))
+    phone = db.Column(db.String(20))
+    appointment_type = db.Column(db.String(20))
+    stylist = db.Column(db.String(20))
+    date = db.Column(db.Date)
+    time = db.Column(db.String(10))
+
+
+class AppointmentForm(FlaskForm):
+    first_name = StringField('First Name', validators=[DataRequired()])
+    last_name = StringField('Last Name', validators=[DataRequired()])
+    email = StringField('Email', validators=[DataRequired()])
+    phone = StringField('Phone', validators=[DataRequired()])
+    appointment_type = SelectField('Appointment Type',
+                                   choices=[(1, 'Hair Style'),
+                                            (2, 'Hair Cut'),
+                                            (3, 'Color Change')],
+                                   validators=[DataRequired()])
+    stylist = SelectField('Stylist',
+                          choices=[(1, 'Ana'), (2, 'Marie'),
+                                   (3, 'Suzie')],
+                          validators=[DataRequired()])
+    date = DateField('Date', validators=[DataRequired()])
+    time = SelectField('Time',
+                       choices=[('10:00 AM', '10:00 AM'), ('10:30 AM', '10:30 AM'),
+                                ('11:00 AM', '11:00 AM'), ('11:30 AM', '11:30 AM'),
+                                ('12:00 PM', '12:00 PM'), ('12:30 PM', '12:30 PM'),
+                                ('1:00 PM', '1:00 PM'), ('1:30 PM', '1:30 PM'),
+                                ('2:00 PM', '2:00 PM'), ('2:30 PM', '2:30 PM'),
+                                ('3:00 PM', '3:00 PM'), ('3:30 PM', '3:30 PM'),
+                                ('4:00 PM', '4:00 PM'), ('4:30 PM', '4:30 PM'),
+                                ('5:00 PM', '5:00 PM'), ('5:30 PM', '5:30 PM'),
+                                ('6:00 PM', '6:00 PM'), ('6:30 PM', '6:30 PM'),
+                                ('7:00 PM', '7:00 PM')],
+                       validators=[DataRequired()])
 
 
 def create_tables():
     with app.app_context():
         db.create_all()
-
-
-def appointment_database_operations():
-    with app.app_context():
-        # Create tables if they don't exist
-        create_tables()
 
         # Query and print the data from the test table
         result = Appointment.query.all()
@@ -59,20 +84,9 @@ def index():
 @app.route('/appointments', methods=['GET', 'POST'])
 def render_appointment_form():
     form = AppointmentForm()
+    if form.validate_on_submit():
+        formatted_date = form.date.data
 
-    if request.method == 'POST' and form.validate_on_submit():
-        first_name = request.form.get('first_name')
-        last_name = request.form.get('last_name')
-        email = request.form.get('email')
-        phone = request.form.get('phone')
-        appointment_type = request.form.get('appointment_type')
-        stylist = request.form.get('stylist')
-        date = request.form.get('date')
-        time = request.form.get('time')
-        
-        date_str = form.date.data
-        formatted_date = datetime.strptime(date_str, '%Y-%m-%d').date()
-        
         appointment = Appointment(
             first_name=form.first_name.data,
             last_name=form.last_name.data,
@@ -83,14 +97,12 @@ def render_appointment_form():
             date=formatted_date,
             time=form.time.data
         )
-
         db.session.add(appointment)
         db.session.commit()
 
         flash('Appointment booked successfully!', 'success')
         return redirect(url_for('success', appointment_id=appointment.id))
 
-    flash('Appointment not booked. Please try again.', 'danger')
     return render_template('appointments.html', form=form)
 
 
@@ -99,7 +111,7 @@ def success(appointment_id):
     appointment = Appointment.query.get(appointment_id)
     if not appointment:
         return redirect(url_for('render_appointment_form'))
-    
+
     return render_template('success.html', appointment=appointment)
 
 
@@ -115,5 +127,4 @@ def about():
 
 if __name__ == '__main__':
     create_tables()
-    appointment_database_operations()
     app.run(host='0.0.0.0', port=5000, debug=True)
