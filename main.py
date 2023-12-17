@@ -1,5 +1,4 @@
 from flask import Flask, redirect, render_template, url_for, request, flash
-from flask_wtf import FlaskForm
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
@@ -7,7 +6,8 @@ from appointments import AppointmentForm
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret_key'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///instance/appointments.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
+
 db = SQLAlchemy(app)
 
 
@@ -28,6 +28,29 @@ def create_tables():
         db.create_all()
 
 
+def appointment_database_operations():
+    with app.app_context():
+        # Create tables if they don't exist
+        create_tables()
+
+        # Query and print the data from the test table
+        result = Appointment.query.all()
+        for record in result:
+            print(
+                f"ID: {record.id}",
+                f"First Name: {record.first_name}",
+                f"Last Name: {record.last_name}",
+                f"Email: {record.email}",
+                f"Phone: {record.phone}",
+                f"Appointment Type: {record.appointment_type}",
+                f"Stylist: {record.stylist}",
+                f"Date: {record.date}",
+                f"Time: {record.time}"
+            )
+
+        print(Appointment)
+
+
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -38,6 +61,15 @@ def render_appointment_form():
     form = AppointmentForm()
 
     if request.method == 'POST' and form.validate_on_submit():
+        first_name = request.form.get('first_name')
+        last_name = request.form.get('last_name')
+        email = request.form.get('email')
+        phone = request.form.get('phone')
+        appointment_type = request.form.get('appointment_type')
+        stylist = request.form.get('stylist')
+        date = request.form.get('date')
+        time = request.form.get('time')
+        
         date_str = form.date.data
         formatted_date = datetime.strptime(date_str, '%Y-%m-%d').date()
         
@@ -49,16 +81,16 @@ def render_appointment_form():
             appointment_type=form.appointment_type.data,
             stylist=form.stylist.data,
             date=formatted_date,
-            time=form.time.data)
+            time=form.time.data
+        )
 
         db.session.add(appointment)
         db.session.commit()
 
         flash('Appointment booked successfully!', 'success')
         return redirect(url_for('success', appointment_id=appointment.id))
-    else:
-        flash('Appointment not booked. Please try again.', 'danger')
 
+    flash('Appointment not booked. Please try again.', 'danger')
     return render_template('appointments.html', form=form)
 
 
@@ -83,4 +115,5 @@ def about():
 
 if __name__ == '__main__':
     create_tables()
+    appointment_database_operations()
     app.run(host='0.0.0.0', port=5000, debug=True)
