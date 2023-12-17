@@ -15,32 +15,32 @@
                     <p>
                         Book an appointment with one of our many highly experienced hair and beauty professional stylists.
                     </p>
-                    <form class="form" method="post" action="{{ url_for('render_appointment_form') }}">
+                    <form class="form" method="POST" action="{{ url_for('render_appointment_form') }}">
                         {{ form.csrf_token }}
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="mb-3">
-                                        <input name="first_name" type="text" class="form-control" placeholder="First Name">
+                                        <input id="first_name" name="first_name" type="text" class="form-control" placeholder="First Name">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="mb-3">
-                                        <input name="last_name" type="text" class="form-control" placeholder="Last Name">
+                                        <input id="last_name" name="last_name" type="text" class="form-control" placeholder="Last Name">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="mb-3">
-                                        <input name="email" type="text" class="form-control" placeholder="Email">
+                                        <input id="email" name="email" type="text" class="form-control" placeholder="Email">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="mb-3">
-                                        <input name="phone" type="text" class="form-control" placeholder="Phone">
+                                        <input id="name" name="phone" type="text" class="form-control" placeholder="Phone">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="mb-3">
-                                        <select name="type" class="form-select" id="style">
+                                        <select name="appointment_type" class="form-select" id="appointment_type">
                                             <option selected>Appointment Type:</option>
                                             <option value="1">Hair Style</option>
                                             <option value="2">Hair Cut</option>
@@ -60,12 +60,12 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="mb-3">
-                                        <input name="date" type="date" class="form-control" placeholder="Date">
+                                        <input id="date" name="date" type="date" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="mb-3">
-                                        <select name="time" class="form-select" id="appointmentTime">
+                                        <select name="time" class="form-select" id="time">
                                             <option selected>Time:</option>
                                             <option value="10:00 AM">10:00 AM</option>
                                             <option value="10:30 AM">10:30 AM</option>
@@ -93,6 +93,15 @@
                                     <div class="form-group">
                                         <div class="button">
                                             <button id="book_appointment" type="submit" class="btn btn-primary active">Book Appointment!</button>
+                                            {% with messages = get_flashed_messages(with_categories=true) %}
+                                                {% if messages %}
+                                                    {% for category, message in messages %}
+                                                    <div class="alert alert-{{ category }}">
+                                                        {{ message }}
+                                                    </div>
+                                                    {% endfor %}
+                                                {% endif %}
+                                            {% endwith %}
                                         </div>
                                     </div>
                                 </div>
