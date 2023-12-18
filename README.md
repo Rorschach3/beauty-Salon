@@ -13,26 +13,26 @@ A brief description of what this project does and who it's for
 Clone the project
 
 ```bash {"id":"01HGF2PWJAAY0Z5PCWWDE3PWTS"}
-  git clone https://github.com/Rorschach3/beauty-Salon.git
+  `git clone https://github.com/Rorschach3/beauty-Salon.git`
 
 ```
 
 Go to the project directory
 
 ```bash {"id":"01HGF2PWJAAY0Z5PCWWE1AYTN4"}
-  cd beauty-Salon
+  `cd beauty-Salon`
 
 ```
 
 ```bash {"id":"01HGF2PWJAAY0Z5PCWWGQ7Z62F"}
-  pip install -r requirements.txt
+  `pip install -r requirements.txt`
 
 ```
 
 Start the server
 
 ```bash {"id":"01HGF2PWJAAY0Z5PCWWJ50TH2H"}
-  python main.py
+ `python main.py`
 
 ```
 
@@ -52,11 +52,16 @@ Start the server
 
 > Appointments Page
 
-- Appointments page has a form for setting up an appointment. It has a date picker, time picker, and a submit button.
+- Appointments page has a form for setting up an appointment. You can choose between the different hair stylists and also the optional services that are offered. You Also choose the date and time of the appointment. There is a submit button that will send the information to the database. Once you submit the data it will take you to the success page which will have a message saying "Your appointment has been scheduled" and a button to go back to the homepage.
+This was created using Flask wtforms for the forms and flask-SQLAlchemy for the database.
 
 > Services Page
 
 - Services page has a dropdown menu with options for "Hair", "Nails", "Hair Cut", and "Beauty Products". Each option has a short description of the service and a picture.
+
+> Success Page
+
+- Success page renders the appointment data on a table has a flash message saying "Appointment booked successfully" and text "Your appointment has been scheduled" and a button to go back to the homepage.
 
 ## Feedback
 

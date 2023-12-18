@@ -31,13 +31,13 @@ class AppointmentForm(FlaskForm):
     email = StringField('Email', validators=[DataRequired()])
     phone = StringField('Phone', validators=[DataRequired()])
     appointment_type = SelectField('Appointment Type',
-                                   choices=[(1, 'Hair Style'),
-                                            (2, 'Hair Cut'),
-                                            (3, 'Color Change')],
+                                   choices=[('Hair Style', 'Hair Style'),
+                                            ('Hair Cut', 'Hair Cut'),
+                                            ('Color Change', 'Color Change')],
                                    validators=[DataRequired()])
     stylist = SelectField('Stylist',
-                          choices=[(1, 'Ana'), (2, 'Marie'),
-                                   (3, 'Suzie')],
+                          choices=[('Ana', 'Ana'), ('Marie', 'Marie'),
+                                   ('Suzie', 'Suzie')],
                           validators=[DataRequired()])
     date = DateField('Date', validators=[DataRequired()])
     time = SelectField('Time',
@@ -75,14 +75,13 @@ def create_tables():
             )
 
 
-def get_appointment_type_string(appointment_type):
-    appointment_types = {1: 'Hair Style', 2: 'Hair Cut', 3: 'Color Change'}
-    return appointment_types.get(appointment_type, 'Unknown')
+# def get_formatted_date(date):
+#     return date.get(date, '')
 
 
-def get_stylist_string(stylist):
-    stylists = {1: 'Ana', 2: 'Marie', 3: 'Suzie'}
-    return stylists.get(stylist, 'Unknown')
+# def get_stylist_string(stylist):
+#     stylists = {1: 'Ana', 2: 'Marie', 3: 'Suzie'}
+#     return stylists.get(stylist, '')
 
 
 @app.route('/')
@@ -94,18 +93,15 @@ def index():
 def render_appointment_form():
     form = AppointmentForm()
     if form.validate_on_submit():
-        formatted_date = form.date.data
-        appointment_type_str = get_appointment_type_string(form.appointment_type.data)
-        stylist_str = get_stylist_string(form.stylist.data)
 
         appointment = Appointment(
             first_name=form.first_name.data,
             last_name=form.last_name.data,
             email=form.email.data,
             phone=form.phone.data,
-            appointment_type=appointment_type_str,
-            stylist=stylist_str,
-            date=formatted_date,
+            appointment_type=form.appointment_type.data,
+            stylist=form.stylist.data,
+            date=form.date.data,
             time=form.time.data
         )
         db.session.add(appointment)
@@ -114,7 +110,6 @@ def render_appointment_form():
         flash('Appointment booked successfully!', 'success')
         return redirect(url_for('success', appointment_id=appointment.id))
 
-    flash('An error occurred. Please try again later.', 'danger')
     return render_template('appointments.html', form=form)
 
 
