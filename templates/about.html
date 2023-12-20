@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block title %} About {% endblock %}
 {% block body %}
+<link rel="stylesheet" type="text/css" href="/static/about.css">
 <!-- About Start -->
 <div class="about-wrap" id="about">
 <div class="container">
@@ -8,16 +9,19 @@
         <div class="col-lg-6">
             <div class="about_box">
                 <div class="title">
-                    <h1>About Us</h1>
+                    <h1 class="about">About Us</h1>
                     <h3>Excellent Results, <span>Highly Recommended,</span> Hair and Beauty Salon</h3>
                 </div>
                 <br>
-                <p>A wonderful, friendly operation.  Nothing is too much trouble, everything is high quality... </p>
-                <div class="readmore"><a href="/about">Read More</a></div>
+                <figure class="text-about">
+                    <blockquote class="blockquote">
+                        <p class="mb-2">A wonderful, friendly operation.  Nothing is too much trouble, everything is high quality... "</p>
+                    </blockquote>
+                </figure>
             </div>
         </div>
         <div class="col-lg-4">
-            <a href="https://imgbb.com/"><img src="https://i.ibb.co/ByjHdhT/aboutImg.png" alt="aboutImg" border="0" /></a>            
+            <img src="https://i.ibb.co/ByjHdhT/aboutImg.png" alt="aboutImg"/>            
         </div>
     </div>
 </div>

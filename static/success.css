@@ -19,5 +19,9 @@ table.table.table-dark.table-striped {
 
 tbody {
     border-style: none;
+}
 
+button.btn.btn-primary.mx-auto {
+    text-align: center;
+    margin: auto;
 }

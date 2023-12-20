@@ -2,12 +2,15 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="favicon.ico" />
+
+        <!-- Bootstrap JavaScript and jQuery library -->
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
         <!-- Bootstrap CSS -->
-        <link
-            rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"/>
         <link rel="stylesheet" href="/static/bootstrap.min.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,6 +18,7 @@
             href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Montserrat:wght@600&family=Playfair+Display:ital,wght@1,600&family=Qwitcher+Grypen&display=swap"
             rel="stylesheet"
             />
+
         <link href="/static/style.css" rel="stylesheet" />
         <title>{% block title %}{% endblock %}</title>
     </head>
@@ -93,10 +97,10 @@
                     <img class="d-block w-100" src="https://i.ibb.co/5T1P3ph/slider.jpg" alt="First slide" />
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="https://images.pexels.com/photos/3356170/pexels-photo-3356170.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=2" alt="Second slide" />
+                    <img class="d-block w-100" src="https://images.pexels.com/photos/3356170/pexels-photo-3356170.jpeg" alt="Second slide" />
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="https://images.pexels.com/photos/3356170/pexels-photo-3356170.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Third slide" />
+                    <img class="d-block w-100" src="https://images.pexels.com/photos/3356170/pexels-photo-3356170.jpeg" alt="Third slide" />
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -126,7 +130,7 @@
                     <li>
                         <div class="contact_box">
                             <div class="icon">
-                                <a href="/"><img src="https://i.ibb.co/3RYBsfb/adress.png" alt="address"></a>
+                                <img src="https://i.ibb.co/3RYBsfb/adress.png" alt="address">
                             </div>
                             <div class="address_info">
                                 <p>
@@ -150,7 +154,7 @@
                     <li>
                         <div class="contact_box">
                             <div class="icon">
-                                <a href="/"><img src="https://i.ibb.co/CPLSVyC/phone.png" alt="phone"></a>
+                                <img src="https://i.ibb.co/CPLSVyC/phone.png" alt="phone">
                             </div>
                             <p>Phone:<span> (714) 123 4567</span></p>
                         </div>
@@ -216,43 +220,41 @@
                                     <div class="social-icons footer_icon">
                                         <div class="social">
                                             <li>
-                                                <a href="https://facebook.com/"><img src="https://i.ibb.co/7jDyzvm/facebook.png" alt="facebook" border="0" style="width: 1em; height: auto" class="fab fa-instagram" aria-hidden="true"></a>
+                                                <a href="https://facebook.com/"><img src="https://i.ibb.co/7jDyzvm/facebook.png" alt="facebook" style="width: 1em; height: auto" class="fab fa-instagram" aria-hidden="true"></a>
                                             </li>
                                             <li>
-                                                <a href="https://ibb.co/c8v9RDM"><img src="https://i.ibb.co/JpdT850/instagram.png" alt="instagram" border="0" style="width: 1em; height: auto" class="fab fa-twitter" aria-hidden="true"></a>
+                                                <a href="https://ibb.co/c8v9RDM"><img src="https://i.ibb.co/JpdT850/instagram.png" alt="instagram" style="width: 1em; height: auto" class="fab fa-twitter" aria-hidden="true"></a>
                                             </li>
                                             <li>
-                                                <a href="https://ibb.co/wMLSNx9"><img src="https://i.ibb.co/0hXCjdg/twitter.png" alt="twitter" border="0" style="width: 1em; height: auto" class="fab fa-instagram" aria-hidden="true"></a>
+                                                <a href="https://ibb.co/wMLSNx9"><img src="https://i.ibb.co/0hXCjdg/twitter.png" alt="twitter" style="width: 1em; height: auto" class="fab fa-instagram" aria-hidden="true"></a>
                                             </li>
                                         </div>
                                     </div>
                         </ul>
-                        </div>
+                            </div>
+                            </div>
                         </div>
                     </div>
+                    <!-- Footer End -->
                 </div>
-                <!-- Footer End -->
             </div>
-        </div>
-        <!-- Contact, Salon Hours, and Footer Section End -->
-        <!-- Js -->
-        <script
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-            crossorigin="anonymous"
-            ></script>
-        <!-- Jquery Fancybox -->
-        <!-- <script src="js/owl.carousel.js"></script> -->
-        <script>
+            <!-- Contact, Salon Hours, and Footer Section End -->
+            <!-- Js -->
+    <!-- Js -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(document).ready(function () {
             // Get the carousel element by its ID
-            var myCarousel = document.getElementById('carouselExampleIndicators');
-            
-            // Create a Bootstrap Carousel instance
-            var carousel = new bootstrap.Carousel(myCarousel, {
-                interval: 4000, // Set the time between each slide transition (in milliseconds). In this example, it's set to 4 seconds.
-                pause: 'hover', // Pause the carousel on hover
+            var myCarousel = $('#carouselExampleIndicators');
+
+            // Initialize the carousel
+            myCarousel.carousel({
+                interval: 1000, // Set the time between each slide transition (in milliseconds). In this example, it's set to 4 seconds.
                 wrap: true // Set to true to loop back to the first slide after reaching the last one
             });
-        </script>
-    </body>
+        });
+    </script>
+</body>
+
 </html>

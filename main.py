@@ -1,6 +1,5 @@
-from flask import Flask, redirect, render_template, url_for, flash
+from flask import Flask, redirect, render_template, url_for, flash, session
 from flask_sqlalchemy import SQLAlchemy
-from datetime import datetime
 from flask_wtf import FlaskForm
 from wtforms import DateField, SelectField, StringField
 from wtforms.validators import DataRequired
@@ -15,14 +14,14 @@ db = SQLAlchemy(app)
 
 class Appointment(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    first_name = db.Column(db.String(50))
-    last_name = db.Column(db.String(50))
-    email = db.Column(db.String(120))
-    phone = db.Column(db.String(20))
-    appointment_type = db.Column(db.String(20))
-    stylist = db.Column(db.String(20))
+    first_name = db.Column(db.String(20), nullable=False)
+    last_name = db.Column(db.String(20), nullable=False)
+    email = db.Column(db.String(20), nullable=False)
+    phone = db.Column(db.String(20), nullable=False)
+    appointment_type = db.Column(db.String(20), nullable=False)
+    stylist = db.Column(db.String(20), nullable=False)
     date = db.Column(db.Date)
-    time = db.Column(db.String(10))
+    time = db.Column(db.String(10), nullable=False)
 
 
 class AppointmentForm(FlaskForm):
@@ -57,31 +56,22 @@ class AppointmentForm(FlaskForm):
 def create_tables():
     with app.app_context():
         db.create_all()
-        
+
 
         # Query and print the data from the test table
-        result = Appointment.query.all()
-        for record in result:
-            print(
-                f"ID: {record.id}",
-                f"First Name: {record.first_name}",
-                f"Last Name: {record.last_name}",
-                f"Email: {record.email}",
-                f"Phone: {record.phone}",
-                f"Appointment Type: {record.appointment_type}",
-                f"Stylist: {record.stylist}",
-                f"Date: {record.date}",
-                f"Time: {record.time}"
-            )
-
-
-# def get_formatted_date(date):
-#     return date.get(date, '')
-
-
-# def get_stylist_string(stylist):
-#     stylists = {1: 'Ana', 2: 'Marie', 3: 'Suzie'}
-#     return stylists.get(stylist, '')
+        # result = Appointment.query.all()
+        # for record in result:
+        #     print(
+        #         f"ID: {record.id}",
+        #         f"First Name: {record.first_name}",
+        #         f"Last Name: {record.last_name}",
+        #         f"Email: {record.email}",
+        #         f"Phone: {record.phone}",
+        #         f"Appointment Type: {record.appointment_type}",
+        #         f"Stylist: {record.stylist}",
+        #         f"Date: {record.date}",
+        #         f"Time: {record.time}"
+        #     )
 
 
 @app.route('/')
