@@ -31,38 +31,38 @@ Start the server
 ## Pages
 
 
-### Website Base Template 
+### Base Template 
 
-Bootwatch was used to create the navbar and overall theme of the website. Bootswatch is a Bootstrap based  and  The business logo is the first element in the navbar followed by "Home" which takes you to the landing page. Followed by "About", "Appointments", "Services" and Services is a dropdown for more options. Those options are "Hair", "Nails", "Hair Cut", and "Beauty Products". Followed by a non-working search bar with submit button. A carousel has been added to the base template, although it does not work at the moment, it will be fixed and a feature in the future. The footer is part of the base template with three main componenets. Contact information with the address, business email, and business phone number. The second component is the Hours of Operation which is just a Monday through Sunday with the hours of operation. The third component is quick links to social media sites using icons for Facebook, Instagram, and Twitter.
+#### Bootwatch shapes the theme and navbar of this website, creating a sleek design. The navbar features the business logo, "Home," "About," "Appointments," and a dropdown "Services" menu including "Hair," "Nails," "Hair Cut," and "Beauty Products." A carousel, though currently non-functional, will be a future feature. The footer includes contact details, hours of operation, and quick links to social media (Facebook, Instagram, Twitter).
 --- 
 
 ### Home Page
 
-Homepage is just a welcome page with a brief description of the business and a button to book an appointment and that takes you to the appointments page. After the button is a blockquote with a quote from a valued customer. More quotes can be added but for now there is just one.
+#### Homepage is just a welcome page with a brief description of the business and a button to book an appointment and that takes you to the appointments page. After the button is a blockquote with a quote from a valued customer. More quotes can be added but for now there is just one.
 ![Webpage Example](https://i.ibb.co/Tkbfhj9/Scissors-Beauty-Salon.png)
 ---
 
 ### About Page
 
-About page has some positive statements about the beauty salon and a collage of images related to beauty and hair.
+#### About page has some positive statements about the beauty salon and a collage of images related to beauty and hair.
 ![About Page](https://i.ibb.co/B6mt4rW/About-wep-page.png)
 ---
 
 ### Services Page
 
-Services page has a dropdown menu in the navbar with options for "Hair", "Nails", "Hair Cut", and "Beauty Products". For the web content it displays three columns with each column having an image of the services offered and a description of each service.
+#### Services page has a dropdown menu in the navbar with options for "Hair", "Nails", "Hair Cut", and "Beauty Products". For the web content it displays three columns with each column having an image of the services offered and a description of each service.
 ![Services Page](https://i.ibb.co/6tvM4MR/Screenshot-2023-12-30-051819.png)
 ---
 
 ### Appointments Page
 
-Appointments page has a form for setting up an appointment. You can choose between the different hair stylists and also the optional services that are offered. You Also choose the date and time of the appointment. There is a submit button that will send the information to the database. Once you submit the data it will take you to the success page.
+#### Appointments page has a form for setting up an appointment. You can choose between the different hair stylists and also the optional services that are offered. You Also choose the date and time of the appointment. There is a submit button that will send the information to the database. Once you submit the data it will take you to the success page.
 ![https://giphy.com/gifs/KjOR2r2hRe4SSdDpSD](https://media.giphy.com/media/KjOR2r2hRe4SSdDpSD/giphy.gif)
 ---
 
 ### Success Page
 
-Success page renders the appointment data on a table, has a flash message saying "Appointment booked successfully", and a button to go back to the homepage.
+#### Success page renders the appointment data on a table, has a flash message saying "Appointment booked successfully", and a button to go back to the homepage.
 ![Success Page](https://i.ibb.co/99Tbjs4/Screenshot-2023-12-30-053313.png)
 ---
 
