@@ -8,28 +8,25 @@
 Clone the project
 
 ```bash {"id":"01HGF2PWJAAY0Z5PCWWDE3PWTS"}
-  git clone https://github.com/Rorschach3/beauty-Salon.git
-
+  `git clone https://github.com/Rorschach3/beauty-Salon.git`
 ```
 
 Go to the project directory
 
 ```bash {"id":"01HGF2PWJAAY0Z5PCWWE1AYTN4"}
-  cd beauty-Salon
-
+  `cd beauty-Salon`
 ```
+
 Install required packages and libraries
 
 ```bash {"id":"01HGF2PWJAAY0Z5PCWWGQ7Z62F"}
-  pip install -r requirements.txt
-
+  `pip install -r requirements.txt`
 ```
 
 Start the server
 
 ```bash {"id":"01HGF2PWJAAY0Z5PCWWJ50TH2H"}
- python main.py
-
+ `python main.py`
 ```
 
 ## Pages
@@ -75,3 +72,4 @@ Start the server
 This website was created based on this website: (medialinkers.net/demo/envato/saloon/publish/index)[https://www.medialinkers.net/demo/envato/saloon/publish/index.html]
 
 If you have any feedback, please reach out: daniel_fhernandez@yahoo.com
+
