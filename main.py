@@ -3,12 +3,15 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import FlaskForm
 from wtforms import DateField, SelectField, StringField
 from wtforms.validators import DataRequired
-
+from flask_session import Session
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = 'secret_key' 
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///data.db"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+app.config["SESSION_PERMANENT"] = False
+app.config["SESSION_TYPE"] = "filesystem"
+Session(app)
 db = SQLAlchemy(app)
 
 
@@ -33,14 +36,14 @@ class AppointmentForm(FlaskForm):
                                    choices=[('Hair Style', 'Hair Style'),
                                             ('Hair Cut', 'Hair Cut'),
                                             ('Color Change', 'Color Change')],
-                                   validators=[DataRequired()])
+                                    validators=[DataRequired()])
     stylist = SelectField('Stylist',
-                          choices=[('Ana', 'Ana'), ('Marie', 'Marie'),
-                                   ('Suzie', 'Suzie')],
-                          validators=[DataRequired()])
+                            choices=[('Ana', 'Ana'), ('Marie', 'Marie'),
+                                ('Suzie', 'Suzie')],
+                            validators=[DataRequired()])
     date = DateField('Date', validators=[DataRequired()])
     time = SelectField('Time',
-                       choices=[('10:00 AM', '10:00 AM'), ('10:30 AM', '10:30 AM'),
+                        choices=[('10:00 AM', '10:00 AM'), ('10:30 AM', '10:30 AM'),
                                 ('11:00 AM', '11:00 AM'), ('11:30 AM', '11:30 AM'),
                                 ('12:00 PM', '12:00 PM'), ('12:30 PM', '12:30 PM'),
                                 ('1:00 PM', '1:00 PM'), ('1:30 PM', '1:30 PM'),
