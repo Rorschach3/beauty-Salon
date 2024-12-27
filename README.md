@@ -69,7 +69,7 @@ Start the server
 
 ## Feedback
 
-This website was created based on this website: (medialinkers.net/demo/envato/saloon/publish/index)[https://www.medialinkers.net/demo/envato/saloon/publish/index.html]
+This website was created based on this website: [medialinkers.net/demo/envato/saloon/publish/index](https://www.medialinkers.net/demo/envato/saloon/publish/index.html)
 
 If you have any feedback, please reach out: daniel_fhernandez@yahoo.com
 
