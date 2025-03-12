@@ -1,29 +1,33 @@
 {% extends "base.html" %}
 {% block title %} About {% endblock %}
 {% block body %}
-<link rel="stylesheet" type="text/css" href="/static/about.css">
+
 <!-- About Start -->
-<div class="about-wrap" id="about">
-<div class="container">
-    <div class="row">
-        <div class="col-lg-6">
-            <div class="about_box">
-                <div class="title">
-                    <h1 class="about">About Us</h1>
-                    <h3>Excellent Results, <span>Highly Recommended,</span> Hair and Beauty Salon</h3>
+<section class="about-wrap" id="about">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="about_box">
+                    <div class="title">
+                        <h1 class="about">About Us</h1>
+                        <h3>Excellent Results, <span>Highly Recommended,</span> Hair and Beauty Salon</h3>
+                    </div>
+                    <br>
+                    <figure class="text-about">
+                        <blockquote class="blockquote">
+                            <p class="mb-2">
+                                "A wonderful, friendly operation. Nothing is too much trouble, everything is high quality..."
+                            </p>
+                        </blockquote>
+                    </figure>
                 </div>
-                <br>
-                <figure class="text-about">
-                    <blockquote class="blockquote">
-                        <p class="mb-2">A wonderful, friendly operation.  Nothing is too much trouble, everything is high quality... "</p>
-                    </blockquote>
-                </figure>
+            </div>
+            <div class="col-lg-6 text-center">
+                <img class="img-fluid rounded" src="https://www.medialinkers.net/demo/envato/saloon/publish/images/aboutImg.png" alt="Salon Image">
             </div>
         </div>
-        <div class="col-lg-4">
-            <img src="https://i.ibb.co/ByjHdhT/aboutImg.png" alt="aboutImg"/>            
-        </div>
     </div>
-</div>
+</section>
 <!-- About End -->
+
 {% endblock %}

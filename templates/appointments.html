@@ -2,106 +2,84 @@
 {% block title %} Appointments {% endblock %}
 {% block body %}
 <br>
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='appointments.css') }}">
+
 <!-- Appointment Start -->
-<div class="content-wrap" id="contact">
+<section class="content-wrap" id="contact">
     <div class="container">
-        <div class="row">
+        <div class="row justify-content-center">
             <div class="col-lg-7">
                 <div class="contact_form">
                     <div class="title">
                         <h1 id="appointment">Make an Appointment</h1>
                     </div>
                     <p>
-                        Book an appointment with one of our many highly experienced hair and beauty professional stylists.
+                        Book an appointment with one of our highly experienced hair and beauty stylists.
                     </p>
+                    <div class="outline border m-4 p-4 border-4px-black rounded bg-light">
                     <form class="form" method="POST" action="{{ url_for('render_appointment_form') }}">
                         {{ form.csrf_token }}
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="mb-3">
-                                        <input id="first_name" name="first_name" type="text" class="form-control" placeholder="First Name">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="mb-3">
-                                        <input id="last_name" name="last_name" type="text" class="form-control" placeholder="Last Name">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="mb-3">
-                                        <input id="email" name="email" type="text" class="form-control" placeholder="Email">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="mb-3">
-                                        <input id="name" name="phone" type="text" class="form-control" placeholder="Phone">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="mb-3">
-                                        <select name="appointment_type" class="form-select" id="appointment_type">
-                                            <option selected>Appointment Type:</option>
-                                            <option value="Hair Style">Hair Style</option>
-                                            <option value="Hair Cut">Hair Cut</option>
-                                            <option value="Color Change">Color Change</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="mb-3">
-                                        <select name="stylist" class="form-select" id="stylist">
-                                            <option selected>Personal Stylist:</option>
-                                            <option value="Ana">Ana</option>
-                                            <option value="Marie">Marie</option>
-                                            <option value="Suzie">Suzie</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="mb-3">
-                                        <input id="date" name="date" type="date" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="mb-3">
-                                        <select name="time" class="form-select" id="time">
-                                            <option selected>Time:</option>
-                                            <option value="10:00 AM">10:00 AM</option>
-                                            <option value="10:30 AM">10:30 AM</option>
-                                            <option value="11:00 AM">11:00 AM</option>
-                                            <option value="11:30 AM">11:30 AM</option>
-                                            <option value="12:00 PM">12:00 PM</option>
-                                            <option value="12:30 PM">12:30 PM</option>
-                                            <option value="1:00 PM">1:00 PM</option>
-                                            <option value="1:30 PM">1:30 PM</option>
-                                            <option value="2:00 PM">2:00 PM</option>
-                                            <option value="2:30 PM">2:30 PM</option>
-                                            <option value="3:00 PM">3:00 PM</option>
-                                            <option value="3:30 PM">3:30 PM</option>
-                                            <option value="4:00 PM">4:00 PM</option>
-                                            <option value="4:30 PM">4:30 PM</option>
-                                            <option value="5:00 PM">5:00 PM</option>
-                                            <option value="5:30 PM">5:30 PM</option>
-                                            <option value="6:00 PM">6:00 PM</option>
-                                            <option value="6:30 PM">6:30 PM</option>
-                                            <option value="7:00 PM">7:00 PM</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="form-group">
-                                        <div class="button">
-                                            <button id="book_appointment" type="submit" class="btn btn-primary active">Book Appointment!</button>
-                                        </div>
-                                    </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="mb-3">
+                                    <input id="first_name" name="first_name" type="text" class="form-control" placeholder="First Name" autocomplete="off">
                                 </div>
                             </div>
-                        </form>
+                            <div class="col-lg-6">
+                                <div class="mb-3">
+                                    <input id="last_name" name="last_name" type="text" class="form-control" placeholder="Last Name" autocomplete="off">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="mb-3">
+                                    <input id="email" name="email" type="email" class="form-control" placeholder="Email" autocomplete="off">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="mb-3">
+                                    <input id="phone" name="phone" type="tel" class="form-control" placeholder="Phone" autocomplete="off">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="mb-3">
+                                    <select name="appointment_type" class="form-select">
+                                        <option selected>Appointment Type:</option>
+                                        <option value="Hair Style">Hair Style</option>
+                                        <option value="Hair Cut">Hair Cut</option>
+                                        <option value="Color Change">Color Change</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="mb-3">
+                                    <select name="stylist" class="form-select">
+                                        <option selected>Personal Stylist:</option>
+                                        <option value="Ana">Ana</option>
+                                        <option value="Marie">Marie</option>
+                                        <option value="Suzie">Suzie</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="mb-3">
+                                    <input id="date" name="date" type="date" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="mb-4">
+                                    <input id="time" name="time" type="time" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-lg-12 text-center mb-4">
+                                <button id="book_appointment" type="submit" class="btn btn-primary btn-outline-sucess btn-block">Book Appointment!</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
-</div>
- <!--Appointments End -->
+</section>
+<!-- Appointments End -->
+
 {% endblock %}

@@ -1,52 +1,57 @@
 /* Appointment header */
 #appointment {
     font-size: 3rem;
-    font-family: 'fa-brands-400', sans-serif;
-    margin: .5em 0 .75em 0;
+    font-family: sans-serif; /* Ensure this is a valid font */
+    margin: 0.5em 0 0.75em 0;
 }
 
-div.#contact.content-wrap {
-    position: relative; /* or absolute */
+/* Appointment section positioning */
+div#contact.content-wrap {
+    position: relative;
     top: 10em;
 }
 
 /* Appointment form */
 #contact > div > div > div > div {
-    box-shadow: 2px 2px 8px 0 rgba(255, 255, 255, 0.3);
+    box-shadow: 2px 2px 8px rgba(255, 255, 255, 0.3);
 }
 
 /* Appointment form Outline */
 div.contact_form {
-    padding: .5em;
+    padding: 0.5em;
     margin: 3em 3em 0 3em;
-    appearance: none;
-    background: rgba(0,0,0,0.01);
+    background: rgba(0, 0, 0, 0.01);
     border: none;
-    border-radius: 15;
-    outline: 0;
-    text-decoration: none;
+    border-radius: 15px;
     width: 50%;
 }
 
-/* appointment Button */
+/* Appointment Button */
 #appointmentButton {
     text-decoration: none;
     color: rgb(255, 255, 255);
     width: 6em;
+    display: inline-block;
+    text-align: center;
+    padding: 0.5em 1em;
+    background-color: rgba(50, 50, 50, 0.5);
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
 }
 
+#appointmentButton:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
 
-/* appointment Button */
-#appointmentButton > a {
+/* Appointment Button Text */
+#appointmentButton a {
     text-decoration: none;
     color: rgb(215, 220, 210);
     font-size: 1.2em;
     font-weight: bold;
-    width: auto;
 }
 
-
-/* Appointment button positioning */
+/* Center the appointment button */
 div.form-group {
     text-align: center;
 }
